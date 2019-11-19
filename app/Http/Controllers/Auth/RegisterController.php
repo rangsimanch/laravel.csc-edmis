@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Jobtitle;
 use App\User;
+use App\Team;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -63,10 +65,44 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
+        if(request()->has('avatar')){
+            $avataruploaded = request()->file('avatar');
+            $avatarname = time() . '.' . $avataruploaded->getClientOriginalExtension() ;
+            $avatarpath = public_path('/images/');
+            $avataruploaded->move($avatarpath, $avatarname);
+          return User::create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'workphone' => $data['workphone'],
+                'dob' => $data['dob'],
+                'gender' => $data['gender'],
+                'team_id' => $data['team_id'],
+                'jobtitle_id' => $data['jobtitle_id'],
+                'password' => Hash::make($data['password']),
+                'img_user' => '/images/' . $avatarname,
+            ]);
+          }
+            return User::create([
+              'name' => $data['name'],
+              'email' => $data['email'],
+              'workphone' => $data['workphone'],
+              'dob' => $data['dob'],
+              'gender' => $data['gender'],
+              'team_id' => $data['team_id'],
+              'jobtitle_id' => $data['jobtitle_id'],
+              'password' => Hash::make($data['password']),
+                  ]);
+    }
+
+     /**
+     * Show the application registration form.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showRegistrationForm()
+    {
+        $teams = Team::all();
+        $jobtitles = Jobtitle::all();
+        return view('auth.register',compact('teams','jobtitles'));
     }
 }

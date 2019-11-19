@@ -40,7 +40,7 @@
                                 <i class="fa fa-user fa-fw"></i>
                             </span>
                         </div>
-                        <input type="text" name="name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" required autofocus placeholder="{{ trans('global.user_name') }}" value="{{ old('name', null) }}">
+                        <input type="text" name="name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" required autofocus placeholder="{{ trans('global.user_fullname') }}" value="{{ old('name', null) }}">
                         @if($errors->has('name'))
                             <div class="invalid-feedback">
                                 {{ $errors->first('name') }}
@@ -111,12 +111,15 @@
                                 <i class="fa fa-users fa-fw"></i>
                             </span>
                         </div>
-                        <select name="team_id" id="team"  class="form-control" required>
+
+                        <select id="team_id" name="team_id" class="form-control" required>
                           <option value="" disabled {{ old('team', null) === null ? 'selected' : '' }}>{{ trans('global.pleaseSelectTEAM') }}</option>
-                            @foreach($teams as $id => $team)
-                                <option value="{{ $id }}"> {{$team ->name}} </option>
+                            @foreach($teams as  $team)
+                              <option value="{{ $team -> id }}" {{ old('team', null) === (string)$team->name ? 'selected' : '' }}>{{ $team -> name }}</option>
                             @endforeach
                         </select>
+
+
                         @if($errors->has('team_id'))
                             <em class="invalid-feedback">
                                 {{ $errors->first('team_id') }}
@@ -131,10 +134,10 @@
                                 <i class="fa fa-address-card fa-fw"></i>
                             </span>
                         </div>
-                        <select name="jobtitle_id" id="jobtitle"  class="form-control" required>
+                        <select id="jobtitle_id" name="jobtitle_id" class="form-control" required>
                           <option value="" disabled {{ old('jobtitle', null) === null ? 'selected' : '' }}>{{ trans('global.pleaseSelectPOSITION') }}</option>
-                            @foreach($jobtitles as $id => $jobtitle)
-                                <option value="{{ $id }}"> {{$jobtitle -> name}} </option>
+                            @foreach($jobtitles as  $jobtitle)
+                              <option value="{{ $jobtitle -> id }}" {{ old('jobtitle', null) === (string)$jobtitle->name ? 'selected' : '' }}>{{ $jobtitle -> name }}</option>
                             @endforeach
                         </select>
                         @if($errors->has('jobtitle_id'))
@@ -186,12 +189,16 @@
                     <button class="btn btn-block btn-primary">
                         {{ trans('global.register') }}
                     </button>
+                    <br>
+                    
+                    <div class="row justify-content-center">
+                    <a href="{{route('login')}}"> Log in to using EDMIS for your existing account </a>
+                        </div>
                 </form>
-
+                            
             </div>
         </div>
-
     </div>
-</div>
+    
 
 @endsection
