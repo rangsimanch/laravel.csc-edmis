@@ -13,9 +13,9 @@
                 <label for="name">{{ trans('cruds.timeProject.fields.name') }}*</label>
                 <input type="text" id="name" name="name" class="form-control" value="{{ old('name', isset($timeProject) ? $timeProject->name : '') }}" required>
                 @if($errors->has('name'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('name') }}
-                    </p>
+                    </em>
                 @endif
                 <p class="helper-block">
                     {{ trans('cruds.timeProject.fields.name_helper') }}
@@ -25,6 +25,8 @@
                 <input class="btn btn-danger" type="submit" value="{{ trans('global.save') }}">
             </div>
         </form>
+
+
     </div>
 </div>
 @endsection

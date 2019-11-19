@@ -14,9 +14,9 @@
                 <label for="category">{{ trans('cruds.faqCategory.fields.category') }}*</label>
                 <input type="text" id="category" name="category" class="form-control" value="{{ old('category', isset($faqCategory) ? $faqCategory->category : '') }}" required>
                 @if($errors->has('category'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('category') }}
-                    </p>
+                    </em>
                 @endif
                 <p class="helper-block">
                     {{ trans('cruds.faqCategory.fields.category_helper') }}

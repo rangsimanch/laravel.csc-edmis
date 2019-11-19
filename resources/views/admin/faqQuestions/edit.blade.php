@@ -18,18 +18,18 @@
                     @endforeach
                 </select>
                 @if($errors->has('category_id'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('category_id') }}
-                    </p>
+                    </em>
                 @endif
             </div>
             <div class="form-group {{ $errors->has('question') ? 'has-error' : '' }}">
                 <label for="question">{{ trans('cruds.faqQuestion.fields.question') }}*</label>
                 <textarea id="question" name="question" class="form-control " required>{{ old('question', isset($faqQuestion) ? $faqQuestion->question : '') }}</textarea>
                 @if($errors->has('question'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('question') }}
-                    </p>
+                    </em>
                 @endif
                 <p class="helper-block">
                     {{ trans('cruds.faqQuestion.fields.question_helper') }}
@@ -39,9 +39,9 @@
                 <label for="answer">{{ trans('cruds.faqQuestion.fields.answer') }}*</label>
                 <textarea id="answer" name="answer" class="form-control " required>{{ old('answer', isset($faqQuestion) ? $faqQuestion->answer : '') }}</textarea>
                 @if($errors->has('answer'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('answer') }}
-                    </p>
+                    </em>
                 @endif
                 <p class="helper-block">
                     {{ trans('cruds.faqQuestion.fields.answer_helper') }}

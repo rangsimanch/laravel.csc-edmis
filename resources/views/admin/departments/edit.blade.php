@@ -14,9 +14,9 @@
                 <label for="name">{{ trans('cruds.department.fields.name') }}*</label>
                 <input type="text" id="name" name="name" class="form-control" value="{{ old('name', isset($department) ? $department->name : '') }}" required>
                 @if($errors->has('name'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('name') }}
-                    </p>
+                    </em>
                 @endif
                 <p class="helper-block">
                     {{ trans('cruds.department.fields.name_helper') }}
@@ -26,9 +26,9 @@
                 <label for="code">{{ trans('cruds.department.fields.code') }}</label>
                 <input type="text" id="code" name="code" class="form-control" value="{{ old('code', isset($department) ? $department->code : '') }}">
                 @if($errors->has('code'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('code') }}
-                    </p>
+                    </em>
                 @endif
                 <p class="helper-block">
                     {{ trans('cruds.department.fields.code_helper') }}

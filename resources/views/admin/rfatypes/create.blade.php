@@ -13,9 +13,9 @@
                 <label for="type_name">{{ trans('cruds.rfatype.fields.type_name') }}</label>
                 <input type="text" id="type_name" name="type_name" class="form-control" value="{{ old('type_name', isset($rfatype) ? $rfatype->type_name : '') }}">
                 @if($errors->has('type_name'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('type_name') }}
-                    </p>
+                    </em>
                 @endif
                 <p class="helper-block">
                     {{ trans('cruds.rfatype.fields.type_name_helper') }}
@@ -25,9 +25,9 @@
                 <label for="type_code">{{ trans('cruds.rfatype.fields.type_code') }}</label>
                 <input type="text" id="type_code" name="type_code" class="form-control" value="{{ old('type_code', isset($rfatype) ? $rfatype->type_code : '') }}">
                 @if($errors->has('type_code'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('type_code') }}
-                    </p>
+                    </em>
                 @endif
                 <p class="helper-block">
                     {{ trans('cruds.rfatype.fields.type_code_helper') }}
@@ -37,6 +37,8 @@
                 <input class="btn btn-danger" type="submit" value="{{ trans('global.save') }}">
             </div>
         </form>
+
+
     </div>
 </div>
 @endsection

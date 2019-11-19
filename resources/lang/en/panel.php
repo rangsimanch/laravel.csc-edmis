@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'site_title' => 'EDMIS',
+    'site_title' => 'CSC-EDMIS',
 ];

@@ -17,18 +17,18 @@
                     @endforeach
                 </select>
                 @if($errors->has('company_id'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('company_id') }}
-                    </p>
+                    </em>
                 @endif
             </div>
             <div class="form-group {{ $errors->has('contact_first_name') ? 'has-error' : '' }}">
                 <label for="contact_first_name">{{ trans('cruds.contactContact.fields.contact_first_name') }}</label>
                 <input type="text" id="contact_first_name" name="contact_first_name" class="form-control" value="{{ old('contact_first_name', isset($contactContact) ? $contactContact->contact_first_name : '') }}">
                 @if($errors->has('contact_first_name'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('contact_first_name') }}
-                    </p>
+                    </em>
                 @endif
                 <p class="helper-block">
                     {{ trans('cruds.contactContact.fields.contact_first_name_helper') }}
@@ -38,9 +38,9 @@
                 <label for="contact_last_name">{{ trans('cruds.contactContact.fields.contact_last_name') }}</label>
                 <input type="text" id="contact_last_name" name="contact_last_name" class="form-control" value="{{ old('contact_last_name', isset($contactContact) ? $contactContact->contact_last_name : '') }}">
                 @if($errors->has('contact_last_name'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('contact_last_name') }}
-                    </p>
+                    </em>
                 @endif
                 <p class="helper-block">
                     {{ trans('cruds.contactContact.fields.contact_last_name_helper') }}
@@ -50,9 +50,9 @@
                 <label for="contact_phone_1">{{ trans('cruds.contactContact.fields.contact_phone_1') }}</label>
                 <input type="text" id="contact_phone_1" name="contact_phone_1" class="form-control" value="{{ old('contact_phone_1', isset($contactContact) ? $contactContact->contact_phone_1 : '') }}">
                 @if($errors->has('contact_phone_1'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('contact_phone_1') }}
-                    </p>
+                    </em>
                 @endif
                 <p class="helper-block">
                     {{ trans('cruds.contactContact.fields.contact_phone_1_helper') }}
@@ -62,9 +62,9 @@
                 <label for="contact_phone_2">{{ trans('cruds.contactContact.fields.contact_phone_2') }}</label>
                 <input type="text" id="contact_phone_2" name="contact_phone_2" class="form-control" value="{{ old('contact_phone_2', isset($contactContact) ? $contactContact->contact_phone_2 : '') }}">
                 @if($errors->has('contact_phone_2'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('contact_phone_2') }}
-                    </p>
+                    </em>
                 @endif
                 <p class="helper-block">
                     {{ trans('cruds.contactContact.fields.contact_phone_2_helper') }}
@@ -74,9 +74,9 @@
                 <label for="contact_email">{{ trans('cruds.contactContact.fields.contact_email') }}</label>
                 <input type="text" id="contact_email" name="contact_email" class="form-control" value="{{ old('contact_email', isset($contactContact) ? $contactContact->contact_email : '') }}">
                 @if($errors->has('contact_email'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('contact_email') }}
-                    </p>
+                    </em>
                 @endif
                 <p class="helper-block">
                     {{ trans('cruds.contactContact.fields.contact_email_helper') }}
@@ -86,9 +86,9 @@
                 <label for="contact_skype">{{ trans('cruds.contactContact.fields.contact_skype') }}</label>
                 <input type="text" id="contact_skype" name="contact_skype" class="form-control" value="{{ old('contact_skype', isset($contactContact) ? $contactContact->contact_skype : '') }}">
                 @if($errors->has('contact_skype'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('contact_skype') }}
-                    </p>
+                    </em>
                 @endif
                 <p class="helper-block">
                     {{ trans('cruds.contactContact.fields.contact_skype_helper') }}
@@ -98,9 +98,9 @@
                 <label for="contact_address">{{ trans('cruds.contactContact.fields.contact_address') }}</label>
                 <input type="text" id="contact_address" name="contact_address" class="form-control" value="{{ old('contact_address', isset($contactContact) ? $contactContact->contact_address : '') }}">
                 @if($errors->has('contact_address'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('contact_address') }}
-                    </p>
+                    </em>
                 @endif
                 <p class="helper-block">
                     {{ trans('cruds.contactContact.fields.contact_address_helper') }}
@@ -110,6 +110,8 @@
                 <input class="btn btn-danger" type="submit" value="{{ trans('global.save') }}">
             </div>
         </form>
+
+
     </div>
 </div>
 @endsection

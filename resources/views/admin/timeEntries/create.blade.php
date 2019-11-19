@@ -17,9 +17,9 @@
                     @endforeach
                 </select>
                 @if($errors->has('work_type_id'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('work_type_id') }}
-                    </p>
+                    </em>
                 @endif
             </div>
             <div class="form-group {{ $errors->has('project_id') ? 'has-error' : '' }}">
@@ -30,18 +30,18 @@
                     @endforeach
                 </select>
                 @if($errors->has('project_id'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('project_id') }}
-                    </p>
+                    </em>
                 @endif
             </div>
             <div class="form-group {{ $errors->has('start_time') ? 'has-error' : '' }}">
                 <label for="start_time">{{ trans('cruds.timeEntry.fields.start_time') }}*</label>
                 <input type="text" id="start_time" name="start_time" class="form-control datetime" value="{{ old('start_time', isset($timeEntry) ? $timeEntry->start_time : '') }}" required>
                 @if($errors->has('start_time'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('start_time') }}
-                    </p>
+                    </em>
                 @endif
                 <p class="helper-block">
                     {{ trans('cruds.timeEntry.fields.start_time_helper') }}
@@ -51,9 +51,9 @@
                 <label for="end_time">{{ trans('cruds.timeEntry.fields.end_time') }}*</label>
                 <input type="text" id="end_time" name="end_time" class="form-control datetime" value="{{ old('end_time', isset($timeEntry) ? $timeEntry->end_time : '') }}" required>
                 @if($errors->has('end_time'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('end_time') }}
-                    </p>
+                    </em>
                 @endif
                 <p class="helper-block">
                     {{ trans('cruds.timeEntry.fields.end_time_helper') }}
@@ -63,6 +63,8 @@
                 <input class="btn btn-danger" type="submit" value="{{ trans('global.save') }}">
             </div>
         </form>
+
+
     </div>
 </div>
 @endsection

@@ -14,9 +14,9 @@
                 <label for="name">{{ trans('cruds.jobtitle.fields.name') }}*</label>
                 <input type="text" id="name" name="name" class="form-control" value="{{ old('name', isset($jobtitle) ? $jobtitle->name : '') }}" required>
                 @if($errors->has('name'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('name') }}
-                    </p>
+                    </em>
                 @endif
                 <p class="helper-block">
                     {{ trans('cruds.jobtitle.fields.name_helper') }}
@@ -32,9 +32,9 @@
                     @endforeach
                 </select>
                 @if($errors->has('departments'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('departments') }}
-                    </p>
+                    </em>
                 @endif
                 <p class="helper-block">
                     {{ trans('cruds.jobtitle.fields.department_helper') }}

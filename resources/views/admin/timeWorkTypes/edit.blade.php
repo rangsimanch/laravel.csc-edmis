@@ -14,9 +14,9 @@
                 <label for="name">{{ trans('cruds.timeWorkType.fields.name') }}*</label>
                 <input type="text" id="name" name="name" class="form-control" value="{{ old('name', isset($timeWorkType) ? $timeWorkType->name : '') }}" required>
                 @if($errors->has('name'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('name') }}
-                    </p>
+                    </em>
                 @endif
                 <p class="helper-block">
                     {{ trans('cruds.timeWorkType.fields.name_helper') }}
