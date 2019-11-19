@@ -18,18 +18,18 @@
                     @endforeach
                 </select>
                 @if($errors->has('category_id'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('category_id') }}
-                    </p>
+                    </em>
                 @endif
             </div>
             <div class="form-group {{ $errors->has('serial_number') ? 'has-error' : '' }}">
                 <label for="serial_number">{{ trans('cruds.asset.fields.serial_number') }}</label>
                 <input type="text" id="serial_number" name="serial_number" class="form-control" value="{{ old('serial_number', isset($asset) ? $asset->serial_number : '') }}">
                 @if($errors->has('serial_number'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('serial_number') }}
-                    </p>
+                    </em>
                 @endif
                 <p class="helper-block">
                     {{ trans('cruds.asset.fields.serial_number_helper') }}
@@ -39,9 +39,9 @@
                 <label for="name">{{ trans('cruds.asset.fields.name') }}*</label>
                 <input type="text" id="name" name="name" class="form-control" value="{{ old('name', isset($asset) ? $asset->name : '') }}" required>
                 @if($errors->has('name'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('name') }}
-                    </p>
+                    </em>
                 @endif
                 <p class="helper-block">
                     {{ trans('cruds.asset.fields.name_helper') }}
@@ -53,9 +53,9 @@
 
                 </div>
                 @if($errors->has('photos'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('photos') }}
-                    </p>
+                    </em>
                 @endif
                 <p class="helper-block">
                     {{ trans('cruds.asset.fields.photos_helper') }}
@@ -69,9 +69,9 @@
                     @endforeach
                 </select>
                 @if($errors->has('status_id'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('status_id') }}
-                    </p>
+                    </em>
                 @endif
             </div>
             <div class="form-group {{ $errors->has('location_id') ? 'has-error' : '' }}">
@@ -82,18 +82,18 @@
                     @endforeach
                 </select>
                 @if($errors->has('location_id'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('location_id') }}
-                    </p>
+                    </em>
                 @endif
             </div>
             <div class="form-group {{ $errors->has('notes') ? 'has-error' : '' }}">
                 <label for="notes">{{ trans('cruds.asset.fields.notes') }}</label>
                 <textarea id="notes" name="notes" class="form-control ">{{ old('notes', isset($asset) ? $asset->notes : '') }}</textarea>
                 @if($errors->has('notes'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('notes') }}
-                    </p>
+                    </em>
                 @endif
                 <p class="helper-block">
                     {{ trans('cruds.asset.fields.notes_helper') }}
@@ -107,9 +107,9 @@
                     @endforeach
                 </select>
                 @if($errors->has('assigned_to_id'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('assigned_to_id') }}
-                    </p>
+                    </em>
                 @endif
             </div>
             <div>

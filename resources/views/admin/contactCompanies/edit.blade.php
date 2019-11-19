@@ -14,9 +14,9 @@
                 <label for="company_name">{{ trans('cruds.contactCompany.fields.company_name') }}</label>
                 <input type="text" id="company_name" name="company_name" class="form-control" value="{{ old('company_name', isset($contactCompany) ? $contactCompany->company_name : '') }}">
                 @if($errors->has('company_name'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('company_name') }}
-                    </p>
+                    </em>
                 @endif
                 <p class="helper-block">
                     {{ trans('cruds.contactCompany.fields.company_name_helper') }}
@@ -26,9 +26,9 @@
                 <label for="company_address">{{ trans('cruds.contactCompany.fields.company_address') }}</label>
                 <input type="text" id="company_address" name="company_address" class="form-control" value="{{ old('company_address', isset($contactCompany) ? $contactCompany->company_address : '') }}">
                 @if($errors->has('company_address'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('company_address') }}
-                    </p>
+                    </em>
                 @endif
                 <p class="helper-block">
                     {{ trans('cruds.contactCompany.fields.company_address_helper') }}
@@ -38,9 +38,9 @@
                 <label for="company_website">{{ trans('cruds.contactCompany.fields.company_website') }}</label>
                 <input type="text" id="company_website" name="company_website" class="form-control" value="{{ old('company_website', isset($contactCompany) ? $contactCompany->company_website : '') }}">
                 @if($errors->has('company_website'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('company_website') }}
-                    </p>
+                    </em>
                 @endif
                 <p class="helper-block">
                     {{ trans('cruds.contactCompany.fields.company_website_helper') }}
@@ -50,9 +50,9 @@
                 <label for="company_email">{{ trans('cruds.contactCompany.fields.company_email') }}</label>
                 <input type="text" id="company_email" name="company_email" class="form-control" value="{{ old('company_email', isset($contactCompany) ? $contactCompany->company_email : '') }}">
                 @if($errors->has('company_email'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('company_email') }}
-                    </p>
+                    </em>
                 @endif
                 <p class="helper-block">
                     {{ trans('cruds.contactCompany.fields.company_email_helper') }}

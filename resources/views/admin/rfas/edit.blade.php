@@ -14,9 +14,9 @@
                 <label for="title">{{ trans('cruds.rfa.fields.title') }}</label>
                 <input type="text" id="title" name="title" class="form-control" value="{{ old('title', isset($rfa) ? $rfa->title : '') }}">
                 @if($errors->has('title'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('title') }}
-                    </p>
+                    </em>
                 @endif
                 <p class="helper-block">
                     {{ trans('cruds.rfa.fields.title_helper') }}
@@ -26,9 +26,9 @@
                 <label for="document_number">{{ trans('cruds.rfa.fields.document_number') }}</label>
                 <input type="text" id="document_number" name="document_number" class="form-control" value="{{ old('document_number', isset($rfa) ? $rfa->document_number : '') }}">
                 @if($errors->has('document_number'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('document_number') }}
-                    </p>
+                    </em>
                 @endif
                 <p class="helper-block">
                     {{ trans('cruds.rfa.fields.document_number_helper') }}
@@ -38,9 +38,9 @@
                 <label for="rfa_code">{{ trans('cruds.rfa.fields.rfa_code') }}</label>
                 <input type="text" id="rfa_code" name="rfa_code" class="form-control" value="{{ old('rfa_code', isset($rfa) ? $rfa->rfa_code : '') }}">
                 @if($errors->has('rfa_code'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('rfa_code') }}
-                    </p>
+                    </em>
                 @endif
                 <p class="helper-block">
                     {{ trans('cruds.rfa.fields.rfa_code_helper') }}
@@ -54,18 +54,18 @@
                     @endforeach
                 </select>
                 @if($errors->has('type_id'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('type_id') }}
-                    </p>
+                    </em>
                 @endif
             </div>
             <div class="form-group {{ $errors->has('submit_date') ? 'has-error' : '' }}">
                 <label for="submit_date">{{ trans('cruds.rfa.fields.submit_date') }}</label>
                 <input type="text" id="submit_date" name="submit_date" class="form-control date" value="{{ old('submit_date', isset($rfa) ? $rfa->submit_date : '') }}">
                 @if($errors->has('submit_date'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('submit_date') }}
-                    </p>
+                    </em>
                 @endif
                 <p class="helper-block">
                     {{ trans('cruds.rfa.fields.submit_date_helper') }}
@@ -79,9 +79,9 @@
                     @endforeach
                 </select>
                 @if($errors->has('issueby_id'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('issueby_id') }}
-                    </p>
+                    </em>
                 @endif
             </div>
             <div class="form-group {{ $errors->has('assign_id') ? 'has-error' : '' }}">
@@ -92,18 +92,18 @@
                     @endforeach
                 </select>
                 @if($errors->has('assign_id'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('assign_id') }}
-                    </p>
+                    </em>
                 @endif
             </div>
             <div class="form-group {{ $errors->has('note_1') ? 'has-error' : '' }}">
                 <label for="note_1">{{ trans('cruds.rfa.fields.note_1') }}</label>
                 <textarea id="note_1" name="note_1" class="form-control ckeditor">{{ old('note_1', isset($rfa) ? $rfa->note_1 : '') }}</textarea>
                 @if($errors->has('note_1'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('note_1') }}
-                    </p>
+                    </em>
                 @endif
                 <p class="helper-block">
                     {{ trans('cruds.rfa.fields.note_1_helper') }}
@@ -115,9 +115,9 @@
 
                 </div>
                 @if($errors->has('file_upload_1'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('file_upload_1') }}
-                    </p>
+                    </em>
                 @endif
                 <p class="helper-block">
                     {{ trans('cruds.rfa.fields.file_upload_1_helper') }}
@@ -131,9 +131,9 @@
                     @endforeach
                 </select>
                 @if($errors->has('create_by_id'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('create_by_id') }}
-                    </p>
+                    </em>
                 @endif
             </div>
             <div class="form-group {{ $errors->has('action_by_id') ? 'has-error' : '' }}">
@@ -144,9 +144,9 @@
                     @endforeach
                 </select>
                 @if($errors->has('action_by_id'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('action_by_id') }}
-                    </p>
+                    </em>
                 @endif
             </div>
             <div class="form-group {{ $errors->has('comment_by_id') ? 'has-error' : '' }}">
@@ -157,9 +157,9 @@
                     @endforeach
                 </select>
                 @if($errors->has('comment_by_id'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('comment_by_id') }}
-                    </p>
+                    </em>
                 @endif
             </div>
             <div class="form-group {{ $errors->has('information_by_id') ? 'has-error' : '' }}">
@@ -170,18 +170,18 @@
                     @endforeach
                 </select>
                 @if($errors->has('information_by_id'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('information_by_id') }}
-                    </p>
+                    </em>
                 @endif
             </div>
             <div class="form-group {{ $errors->has('receive_date') ? 'has-error' : '' }}">
                 <label for="receive_date">{{ trans('cruds.rfa.fields.receive_date') }}</label>
                 <input type="text" id="receive_date" name="receive_date" class="form-control date" value="{{ old('receive_date', isset($rfa) ? $rfa->receive_date : '') }}">
                 @if($errors->has('receive_date'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('receive_date') }}
-                    </p>
+                    </em>
                 @endif
                 <p class="helper-block">
                     {{ trans('cruds.rfa.fields.receive_date_helper') }}
@@ -191,9 +191,9 @@
                 <label for="note_2">{{ trans('cruds.rfa.fields.note_2') }}</label>
                 <textarea id="note_2" name="note_2" class="form-control ckeditor">{{ old('note_2', isset($rfa) ? $rfa->note_2 : '') }}</textarea>
                 @if($errors->has('note_2'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('note_2') }}
-                    </p>
+                    </em>
                 @endif
                 <p class="helper-block">
                     {{ trans('cruds.rfa.fields.note_2_helper') }}
@@ -207,18 +207,18 @@
                     @endforeach
                 </select>
                 @if($errors->has('comment_status_id'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('comment_status_id') }}
-                    </p>
+                    </em>
                 @endif
             </div>
             <div class="form-group {{ $errors->has('note_3') ? 'has-error' : '' }}">
                 <label for="note_3">{{ trans('cruds.rfa.fields.note_3') }}</label>
                 <textarea id="note_3" name="note_3" class="form-control ">{{ old('note_3', isset($rfa) ? $rfa->note_3 : '') }}</textarea>
                 @if($errors->has('note_3'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('note_3') }}
-                    </p>
+                    </em>
                 @endif
                 <p class="helper-block">
                     {{ trans('cruds.rfa.fields.note_3_helper') }}
@@ -232,9 +232,9 @@
                     @endforeach
                 </select>
                 @if($errors->has('for_status_id'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('for_status_id') }}
-                    </p>
+                    </em>
                 @endif
             </div>
             <div class="form-group {{ $errors->has('document_status_id') ? 'has-error' : '' }}">
@@ -245,9 +245,9 @@
                     @endforeach
                 </select>
                 @if($errors->has('document_status_id'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('document_status_id') }}
-                    </p>
+                    </em>
                 @endif
             </div>
             <div>

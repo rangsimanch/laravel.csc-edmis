@@ -13,9 +13,9 @@
                 <label for="name">{{ trans('cruds.team.fields.name') }}*</label>
                 <input type="text" id="name" name="name" class="form-control" value="{{ old('name', isset($team) ? $team->name : '') }}" required>
                 @if($errors->has('name'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('name') }}
-                    </p>
+                    </em>
                 @endif
                 <p class="helper-block">
                     {{ trans('cruds.team.fields.name_helper') }}
@@ -25,9 +25,9 @@
                 <label for="code">{{ trans('cruds.team.fields.code') }}*</label>
                 <input type="text" id="code" name="code" class="form-control" value="{{ old('code', isset($team) ? $team->code : '') }}" required>
                 @if($errors->has('code'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('code') }}
-                    </p>
+                    </em>
                 @endif
                 <p class="helper-block">
                     {{ trans('cruds.team.fields.code_helper') }}
@@ -37,6 +37,8 @@
                 <input class="btn btn-danger" type="submit" value="{{ trans('global.save') }}">
             </div>
         </form>
+
+
     </div>
 </div>
 @endsection

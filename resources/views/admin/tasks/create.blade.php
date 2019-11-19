@@ -13,9 +13,9 @@
                 <label for="name">{{ trans('cruds.task.fields.name') }}*</label>
                 <input type="text" id="name" name="name" class="form-control" value="{{ old('name', isset($task) ? $task->name : '') }}" required>
                 @if($errors->has('name'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('name') }}
-                    </p>
+                    </em>
                 @endif
                 <p class="helper-block">
                     {{ trans('cruds.task.fields.name_helper') }}
@@ -25,9 +25,9 @@
                 <label for="description">{{ trans('cruds.task.fields.description') }}</label>
                 <textarea id="description" name="description" class="form-control ">{{ old('description', isset($task) ? $task->description : '') }}</textarea>
                 @if($errors->has('description'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('description') }}
-                    </p>
+                    </em>
                 @endif
                 <p class="helper-block">
                     {{ trans('cruds.task.fields.description_helper') }}
@@ -41,9 +41,9 @@
                     @endforeach
                 </select>
                 @if($errors->has('status_id'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('status_id') }}
-                    </p>
+                    </em>
                 @endif
             </div>
             <div class="form-group {{ $errors->has('tags') ? 'has-error' : '' }}">
@@ -56,9 +56,9 @@
                     @endforeach
                 </select>
                 @if($errors->has('tags'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('tags') }}
-                    </p>
+                    </em>
                 @endif
                 <p class="helper-block">
                     {{ trans('cruds.task.fields.tag_helper') }}
@@ -68,9 +68,9 @@
                 <label for="due_date">{{ trans('cruds.task.fields.due_date') }}</label>
                 <input type="text" id="due_date" name="due_date" class="form-control date" value="{{ old('due_date', isset($task) ? $task->due_date : '') }}">
                 @if($errors->has('due_date'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('due_date') }}
-                    </p>
+                    </em>
                 @endif
                 <p class="helper-block">
                     {{ trans('cruds.task.fields.due_date_helper') }}
@@ -80,9 +80,9 @@
                 <label for="end_date">{{ trans('cruds.task.fields.end_date') }}</label>
                 <input type="text" id="end_date" name="end_date" class="form-control datetime" value="{{ old('end_date', isset($task) ? $task->end_date : '') }}">
                 @if($errors->has('end_date'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('end_date') }}
-                    </p>
+                    </em>
                 @endif
                 <p class="helper-block">
                     {{ trans('cruds.task.fields.end_date_helper') }}
@@ -94,9 +94,9 @@
 
                 </div>
                 @if($errors->has('attachment'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('attachment') }}
-                    </p>
+                    </em>
                 @endif
                 <p class="helper-block">
                     {{ trans('cruds.task.fields.attachment_helper') }}
@@ -106,6 +106,8 @@
                 <input class="btn btn-danger" type="submit" value="{{ trans('global.save') }}">
             </div>
         </form>
+
+
     </div>
 </div>
 @endsection

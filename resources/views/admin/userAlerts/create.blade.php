@@ -13,9 +13,9 @@
                 <label for="alert_text">{{ trans('cruds.userAlert.fields.alert_text') }}*</label>
                 <input type="text" id="alert_text" name="alert_text" class="form-control" value="{{ old('alert_text', isset($userAlert) ? $userAlert->alert_text : '') }}" required>
                 @if($errors->has('alert_text'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('alert_text') }}
-                    </p>
+                    </em>
                 @endif
                 <p class="helper-block">
                     {{ trans('cruds.userAlert.fields.alert_text_helper') }}
@@ -25,9 +25,9 @@
                 <label for="alert_link">{{ trans('cruds.userAlert.fields.alert_link') }}</label>
                 <input type="text" id="alert_link" name="alert_link" class="form-control" value="{{ old('alert_link', isset($userAlert) ? $userAlert->alert_link : '') }}">
                 @if($errors->has('alert_link'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('alert_link') }}
-                    </p>
+                    </em>
                 @endif
                 <p class="helper-block">
                     {{ trans('cruds.userAlert.fields.alert_link_helper') }}
@@ -43,9 +43,9 @@
                     @endforeach
                 </select>
                 @if($errors->has('users'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('users') }}
-                    </p>
+                    </em>
                 @endif
                 <p class="helper-block">
                     {{ trans('cruds.userAlert.fields.user_helper') }}
@@ -55,6 +55,8 @@
                 <input class="btn btn-danger" type="submit" value="{{ trans('global.save') }}">
             </div>
         </form>
+
+
     </div>
 </div>
 @endsection

@@ -13,9 +13,9 @@
                 <label for="status_name">{{ trans('cruds.rfaDocumentStatus.fields.status_name') }}</label>
                 <input type="text" id="status_name" name="status_name" class="form-control" value="{{ old('status_name', isset($rfaDocumentStatus) ? $rfaDocumentStatus->status_name : '') }}">
                 @if($errors->has('status_name'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('status_name') }}
-                    </p>
+                    </em>
                 @endif
                 <p class="helper-block">
                     {{ trans('cruds.rfaDocumentStatus.fields.status_name_helper') }}
@@ -25,6 +25,8 @@
                 <input class="btn btn-danger" type="submit" value="{{ trans('global.save') }}">
             </div>
         </form>
+
+
     </div>
 </div>
 @endsection

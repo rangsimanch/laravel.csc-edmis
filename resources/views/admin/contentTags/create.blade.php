@@ -13,9 +13,9 @@
                 <label for="name">{{ trans('cruds.contentTag.fields.name') }}*</label>
                 <input type="text" id="name" name="name" class="form-control" value="{{ old('name', isset($contentTag) ? $contentTag->name : '') }}" required>
                 @if($errors->has('name'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('name') }}
-                    </p>
+                    </em>
                 @endif
                 <p class="helper-block">
                     {{ trans('cruds.contentTag.fields.name_helper') }}
@@ -25,9 +25,9 @@
                 <label for="slug">{{ trans('cruds.contentTag.fields.slug') }}</label>
                 <input type="text" id="slug" name="slug" class="form-control" value="{{ old('slug', isset($contentTag) ? $contentTag->slug : '') }}">
                 @if($errors->has('slug'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('slug') }}
-                    </p>
+                    </em>
                 @endif
                 <p class="helper-block">
                     {{ trans('cruds.contentTag.fields.slug_helper') }}
@@ -37,6 +37,8 @@
                 <input class="btn btn-danger" type="submit" value="{{ trans('global.save') }}">
             </div>
         </form>
+
+
     </div>
 </div>
 @endsection

@@ -14,9 +14,9 @@
                 <label for="title">{{ trans('cruds.contentPage.fields.title') }}*</label>
                 <input type="text" id="title" name="title" class="form-control" value="{{ old('title', isset($contentPage) ? $contentPage->title : '') }}" required>
                 @if($errors->has('title'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('title') }}
-                    </p>
+                    </em>
                 @endif
                 <p class="helper-block">
                     {{ trans('cruds.contentPage.fields.title_helper') }}
@@ -32,9 +32,9 @@
                     @endforeach
                 </select>
                 @if($errors->has('categories'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('categories') }}
-                    </p>
+                    </em>
                 @endif
                 <p class="helper-block">
                     {{ trans('cruds.contentPage.fields.category_helper') }}
@@ -50,9 +50,9 @@
                     @endforeach
                 </select>
                 @if($errors->has('tags'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('tags') }}
-                    </p>
+                    </em>
                 @endif
                 <p class="helper-block">
                     {{ trans('cruds.contentPage.fields.tag_helper') }}
@@ -62,9 +62,9 @@
                 <label for="page_text">{{ trans('cruds.contentPage.fields.page_text') }}</label>
                 <textarea id="page_text" name="page_text" class="form-control ckeditor">{{ old('page_text', isset($contentPage) ? $contentPage->page_text : '') }}</textarea>
                 @if($errors->has('page_text'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('page_text') }}
-                    </p>
+                    </em>
                 @endif
                 <p class="helper-block">
                     {{ trans('cruds.contentPage.fields.page_text_helper') }}
@@ -74,9 +74,9 @@
                 <label for="excerpt">{{ trans('cruds.contentPage.fields.excerpt') }}</label>
                 <textarea id="excerpt" name="excerpt" class="form-control ">{{ old('excerpt', isset($contentPage) ? $contentPage->excerpt : '') }}</textarea>
                 @if($errors->has('excerpt'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('excerpt') }}
-                    </p>
+                    </em>
                 @endif
                 <p class="helper-block">
                     {{ trans('cruds.contentPage.fields.excerpt_helper') }}
@@ -88,9 +88,9 @@
 
                 </div>
                 @if($errors->has('featured_image'))
-                    <p class="help-block">
+                    <em class="invalid-feedback">
                         {{ $errors->first('featured_image') }}
-                    </p>
+                    </em>
                 @endif
                 <p class="helper-block">
                     {{ trans('cruds.contentPage.fields.featured_image_helper') }}
