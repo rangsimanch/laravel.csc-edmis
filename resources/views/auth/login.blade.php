@@ -4,6 +4,12 @@
     <div class="col-md-6">
         <div class="card mx-4">
             <div class="card-body p-4">
+            <div class="p-5 justify-content-center">
+                  <div class="text-center justify-content-center">
+                    <img src="/images/CSC-logo.png" style="height:150px; width:150px;">
+                    <br></br>
+                    <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+                  </div>
                 <h1>{{ trans('panel.site_title') }}</h1>
 
                 <p class="text-muted">{{ trans('global.login') }}</p>
