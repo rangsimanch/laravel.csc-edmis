@@ -66,7 +66,7 @@
             </div>
             <div class="form-group {{ $errors->has('due_date') ? 'has-error' : '' }}">
                 <label for="due_date">{{ trans('cruds.task.fields.due_date') }}</label>
-                <input type="text" id="due_date" name="due_date" class="form-control datetime" value="{{ old('due_date', isset($task) ? $task->due_date : '') }}">
+                <input type="text" id="due_date" name="due_date" class="form-control date" value="{{ old('due_date', isset($task) ? $task->due_date : '') }}">
                 @if($errors->has('due_date'))
                     <em class="invalid-feedback">
                         {{ $errors->first('due_date') }}
