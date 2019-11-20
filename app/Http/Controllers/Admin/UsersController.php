@@ -68,7 +68,6 @@ class UsersController extends Controller
         return view('admin.users.edit', compact('teams', 'jobtitles', 'roles', 'user'));
     }
 
-
     public function update(UpdateUserRequest $request, User $user)
     {
         $user->update($request->all());
